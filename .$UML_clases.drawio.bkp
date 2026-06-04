@@ -1,0 +1,48 @@
+<mxfile host="Electron">
+  <diagram name="Página-1" id="t0W-wr2MUde2Vwzk_wn-">
+    <mxGraphModel dx="1030" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="O9dZ0VOjE-3F4znJYbjC-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="+ Vehiculo" vertex="1">
+          <mxGeometry height="118" width="170" x="120" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="O9dZ0VOjE-3F4znJYbjC-2" parent="O9dZ0VOjE-3F4znJYbjC-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- patente: str&lt;div&gt;- marca: str&lt;/div&gt;&lt;div&gt;- modelo: str&lt;/div&gt;&lt;div&gt;- anio: int&lt;/div&gt;&lt;div&gt;- estado_operativo: str&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="170" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="O9dZ0VOjE-3F4znJYbjC-3" parent="O9dZ0VOjE-3F4znJYbjC-1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="170" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="O9dZ0VOjE-3F4znJYbjC-5" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="+ Conductor" vertex="1">
+          <mxGeometry height="108" width="160" x="80" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="O9dZ0VOjE-3F4znJYbjC-6" parent="O9dZ0VOjE-3F4znJYbjC-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- licencia:str&lt;div&gt;- nombre: str&lt;/div&gt;&lt;div&gt;- antiguedad:int&lt;/div&gt;&lt;div&gt;- categoria: str&lt;/div&gt;" vertex="1">
+          <mxGeometry height="74" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="O9dZ0VOjE-3F4znJYbjC-7" parent="O9dZ0VOjE-3F4znJYbjC-5" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="O9dZ0VOjE-3F4znJYbjC-13" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="30" width="60" x="160" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="O9dZ0VOjE-3F4znJYbjC-9" edge="1" parent="O9dZ0VOjE-3F4znJYbjC-13" source="O9dZ0VOjE-3F4znJYbjC-1" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;entryX=0.345;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.349;exitY=-0.003;exitDx=0;exitDy=0;exitPerimeter=0;" target="O9dZ0VOjE-3F4znJYbjC-7" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="120" as="sourcePoint" />
+            <mxPoint x="290" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O9dZ0VOjE-3F4znJYbjC-10" connectable="0" parent="O9dZ0VOjE-3F4znJYbjC-9" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry" />
+        </mxCell>
+        <mxCell id="O9dZ0VOjE-3F4znJYbjC-11" connectable="0" parent="O9dZ0VOjE-3F4znJYbjC-9" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="-15" y="32" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O9dZ0VOjE-3F4znJYbjC-12" parent="O9dZ0VOjE-3F4znJYbjC-13" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Asignado" vertex="1">
+          <mxGeometry height="30" width="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
