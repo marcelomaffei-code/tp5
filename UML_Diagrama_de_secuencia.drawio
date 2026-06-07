@@ -1,0 +1,385 @@
+<mxfile host="Electron">
+  <diagram name="Página-1" id="h-CMIh9ZOAj8kGIvJgkD">
+    <mxGraphModel dx="1414" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ntjvPSHidP01W5h0kLpa-1" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};participant=umlActor;verticalAlign=bottom;labelPosition=center;verticalLabelPosition=top;align=center;size=65;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Operador" vertex="1">
+          <mxGeometry height="2858" width="35" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-2" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="SistemaLogistica" vertex="1">
+          <mxGeometry height="2858" width="150" x="436" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-3" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Vehiculo" vertex="1">
+          <mxGeometry height="2858" width="150" x="712" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-4" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Conductor" vertex="1">
+          <mxGeometry height="2858" width="150" x="912" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-5" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Envio" vertex="1">
+          <mxGeometry height="2858" width="150" x="1112" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-6" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="EntregaParcial" vertex="1">
+          <mxGeometry height="2858" width="150" x="1312" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-7" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="EventoHistorial" vertex="1">
+          <mxGeometry height="2858" width="150" x="1512" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-8" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="RepositorioDatos" vertex="1">
+          <mxGeometry height="2858" width="150" x="1712" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-9" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="RepositorioArchivo" vertex="1">
+          <mxGeometry height="2858" width="154" x="1912" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-10" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-1" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-2" value="crear_envio(datos_envio)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="312" y="127" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-11" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-3" value="esta_disponible()">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="658" y="179" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-12" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-3" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-2" value="true">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="661" y="231" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-13" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-3" value="validar_carga(tipo_carga)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="658" y="283" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-14" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-3" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-2" value="true">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="661" y="335" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-15" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-4" value="puede_transportar(tipo_carga)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="758" y="387" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-16" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-4" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-2" value="true">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="761" y="439" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-17" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-5" value="crear(origen, destino, vehiculo)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="858" y="491" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-18" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-5" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-2" value="envio en estado PENDIENTE">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="861" y="543" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-19" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-7" value="crear_evento(&quot;Envio creado&quot;, null, PENDIENTE)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1058" y="595" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-20" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-5" value="agregar_evento_historial(evento)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="858" y="647" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-21" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-8" value="guardar(datos)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1158" y="699" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-22" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-8" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-9" value="guardar(datos)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1897" y="751" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-23" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-9" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-8" value="datos guardados">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1900" y="803" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-24" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-8" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-2" value="confirmacion">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1161" y="855" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-25" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-1" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-2" value="iniciar_envio(numero_seguimiento)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="312" y="907" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-26" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-5" value="iniciar_transito()">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="858" y="959" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-27" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-5" style="curved=1;endArrow=block;rounded=0;" target="ntjvPSHidP01W5h0kLpa-5" value="validar_transicion(EN_TRANSITO)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1238" y="1011" />
+              <mxPoint x="1238" y="1041" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-28" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-5" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-7" value="crear_evento(&quot;Envio iniciado&quot;, PENDIENTE, EN_TRANSITO)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1401" y="1093" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-29" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-5" style="curved=1;endArrow=block;rounded=0;" target="ntjvPSHidP01W5h0kLpa-5" value="agregar_evento_historial(evento)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1238" y="1145" />
+              <mxPoint x="1238" y="1175" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-30" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-5" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-2" value="estado EN_TRANSITO">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="861" y="1227" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-31" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-3" value="cambiar_estado(EN_RUTA)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="658" y="1279" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-32" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-8" value="guardar(datos)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1158" y="1331" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-33" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-8" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-9" value="guardar(datos)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1897" y="1383" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-34" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-9" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-8" value="datos guardados">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1900" y="1435" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-35" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-8" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-2" value="confirmacion">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1161" y="1487" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-36" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-1" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-2" value="registrar_entrega_parcial(numero, datos_entrega)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="312" y="1539" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-37" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-6" value="crear(punto, fecha, detalle_carga)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="958" y="1591" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-38" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-6" value="marcar_entregada()">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="958" y="1643" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-39" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-6" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-2" value="entrega ENTREGADA">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="961" y="1695" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-40" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-5" value="registrar_entrega_parcial(parcial)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="858" y="1747" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-41" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-5" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-7" value="crear_evento(&quot;Entrega parcial registrada&quot;, EN_TRANSITO, EN_TRANSITO)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1452" y="1799" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-42" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-5" style="curved=1;endArrow=block;rounded=0;" target="ntjvPSHidP01W5h0kLpa-5" value="agregar_evento_historial(evento)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1238" y="1851" />
+              <mxPoint x="1238" y="1881" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-43" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-8" value="guardar(datos)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1158" y="1933" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-44" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-8" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-9" value="guardar(datos)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1897" y="1985" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-45" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-9" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-8" value="datos guardados">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1900" y="2037" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-46" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-8" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-2" value="confirmacion">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1161" y="2089" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-47" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-1" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-2" value="finalizar_envio(numero_seguimiento)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="312" y="2141" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-48" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-5" value="marcar_entregado()">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="858" y="2193" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-49" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-5" style="curved=1;endArrow=block;rounded=0;" target="ntjvPSHidP01W5h0kLpa-5" value="validar_transicion(ENTREGADO)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1238" y="2245" />
+              <mxPoint x="1238" y="2275" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-50" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-5" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-7" value="crear_evento(&quot;Envio entregado&quot;, EN_TRANSITO, ENTREGADO)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1415" y="2327" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-51" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-5" style="curved=1;endArrow=block;rounded=0;" target="ntjvPSHidP01W5h0kLpa-5" value="agregar_evento_historial(evento)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1238" y="2379" />
+              <mxPoint x="1238" y="2409" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-52" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-5" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-2" value="estado ENTREGADO">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="861" y="2461" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-53" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-3" value="cambiar_estado(DISPONIBLE)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="658" y="2513" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-54" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-8" value="guardar(datos)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1158" y="2565" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-55" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-8" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-9" value="guardar(datos)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1897" y="2617" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-56" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-9" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-8" value="datos guardados">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1900" y="2669" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-57" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-8" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-2" value="confirmacion">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1161" y="2721" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ntjvPSHidP01W5h0kLpa-58" edge="1" parent="1" source="ntjvPSHidP01W5h0kLpa-2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="ntjvPSHidP01W5h0kLpa-1" value="envio finalizado correctamente">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="315" y="2773" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
