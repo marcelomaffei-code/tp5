@@ -1,0 +1,30 @@
+# Ignorar bytecode compilado y cachés
+__pycache__/
+*.pyc
+
+# Entornos virtuales
+venv/
+.env/
+env/
+
+# IDE / editor
+.vscode/
+.idea/
+
+# S.O.
+Thumbs.db
+.DS_Store
+
+# Logs y datos generados
+*.log
+data/
+data/datos_logistica.json
+
+# Archivos temporales de OneDrive
+~$*
+
+# Otros
+*.sqlite3
+*.egg-info/
+dist/
+build/
