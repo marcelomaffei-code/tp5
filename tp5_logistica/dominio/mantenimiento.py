@@ -43,6 +43,7 @@ class IntervencionMantenimiento(ABC):
             "descripcion": self._descripcion,
             "costo_base": self._costo_base,
         }
+
 def mantenimiento_from_dict(data):
     """Factory para reconstruir intervenciones desde dict (imports relativos)."""
     tipo = data.get("tipo_clase")
@@ -66,4 +67,4 @@ def mantenimiento_from_dict(data):
             gravedad_falla=data.get("gravedad_falla"),
         )
 
-    raise ValueError(f"Tipo de mantenimiento inválido: {tipo}")    
+    raise ValueError(f"Tipo de mantenimiento inválido: {tipo}")

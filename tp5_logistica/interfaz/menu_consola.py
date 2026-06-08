@@ -1,11 +1,12 @@
 from dominio.enums import TipoCarga
-from dominio.vehiculo import CamionConvencional, VehiculoRefrigerado, VehiculoCargaPeligrosa
-from dominio.conductor import Conductor
+from dominio.camion_convencional import CamionConvencional
+from dominio.vehiculo_refrigerado import VehiculoRefrigerado
+from dominio.vehiculo_carga_peligrosa import VehiculoCargaPeligrosa
 from dominio.centro_distribucion import CentroDistribucion
 from dominio.entrega_parcial import EntregaParcial
 from dominio.mantenimiento import IntervencionPreventiva, IntervencionCorrectiva
 from dominio.enums import CategoriaConductor
-
+from dominio.conductor import Conductor
 
 class MenuConsola:
     def __init__(self, sistema):
