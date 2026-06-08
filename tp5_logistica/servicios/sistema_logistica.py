@@ -1,16 +1,15 @@
 from dominio.enums import EstadoVehiculo, EstadoEnvio, CategoriaConductor, TipoCarga
-from dominio.vehiculo import CamionConvencional, VehiculoRefrigerado, VehiculoCargaPeligrosa
+from dominio.camion_convencional import CamionConvencional
+from dominio.vehiculo_refrigerado import VehiculoRefrigerado
+from dominio.vehiculo_carga_peligrosa import VehiculoCargaPeligrosa
 from dominio.conductor import Conductor
 from dominio.centro_distribucion import CentroDistribucion
 from dominio.envio import Envio
 from dominio.entrega_parcial import EntregaParcial
 from dominio.evento_historial import EventoHistorial
-from dominio.mantenimiento import (
-    IntervencionPreventiva,
-    IntervencionCorrectiva,
-    mantenimiento_from_dict,
-)
-
+from dominio.IntervencionPreventiva import IntervencionPreventiva
+from dominio.IntervencionCorrectiva import IntervencionCorrectiva
+from dominio.mantenimiento import mantenimiento_from_dict
 
 class SistemaLogistica:
     def __init__(self, repositorio):

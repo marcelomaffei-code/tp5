@@ -43,3 +43,27 @@ class IntervencionMantenimiento(ABC):
             "descripcion": self._descripcion,
             "costo_base": self._costo_base,
         }
+def mantenimiento_from_dict(data):
+    """Factory para reconstruir intervenciones desde dict (imports relativos)."""
+    tipo = data.get("tipo_clase")
+    if tipo == "IntervencionPreventiva":
+        from .intervencion_preventiva import IntervencionPreventiva
+        return IntervencionPreventiva(
+            fecha=data.get("fecha"),
+            kilometraje=data.get("kilometraje"),
+            descripcion=data.get("descripcion"),
+            costo_base=data.get("costo_base"),
+            revision_programada=data.get("revision_programada"),
+        )
+
+    if tipo == "IntervencionCorrectiva":
+        from .intervencion_correctiva import IntervencionCorrectiva
+        return IntervencionCorrectiva(
+            fecha=data.get("fecha"),
+            kilometraje=data.get("kilometraje"),
+            descripcion=data.get("descripcion"),
+            costo_base=data.get("costo_base"),
+            gravedad_falla=data.get("gravedad_falla"),
+        )
+
+    raise ValueError(f"Tipo de mantenimiento inválido: {tipo}")    
