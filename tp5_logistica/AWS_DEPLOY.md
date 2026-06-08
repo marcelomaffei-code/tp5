@@ -9,7 +9,7 @@ Este proyecto es una aplicacion de consola interactiva. La forma mas simple de s
 3. Conectarse por SSH:
 
 ```bash
-ssh -i tu-clave.pem ubuntu@IP_DE_LA_INSTANCIA
+ssh -i "C:\Users\Administrador\Downloads\tp_logistica_key.pem" ubuntu@3.21.167.26
 ```
 
 4. Instalar Docker:
@@ -24,7 +24,7 @@ sudo usermod -aG docker ubuntu
 6. Subir el proyecto a la instancia. Desde tu maquina local:
 
 ```bash
-scp -i tu-clave.pem -r tp5_logistica ubuntu@IP_DE_LA_INSTANCIA:/home/ubuntu/
+scp -i "C:\Users\Administrador\Downloads\tp_logistica_key.pem" -r tp5_logistica ubuntu@3.21.167.26:/home/ubuntu/
 ```
 
 7. Construir la imagen:
