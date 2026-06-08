@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+from dominio.IntervencionPreventiva import IntervencionPreventiva
+from .IntervencionCorrectiva import IntervencionCorrectiva
 
 class IntervencionMantenimiento(ABC):
     def __init__(self, fecha, kilometraje, descripcion, costo_base):
@@ -48,7 +50,6 @@ def mantenimiento_from_dict(data):
     """Factory para reconstruir intervenciones desde dict (imports relativos)."""
     tipo = data.get("tipo_clase")
     if tipo == "IntervencionPreventiva":
-        from .intervencion_preventiva import IntervencionPreventiva
         return IntervencionPreventiva(
             fecha=data.get("fecha"),
             kilometraje=data.get("kilometraje"),
@@ -58,7 +59,6 @@ def mantenimiento_from_dict(data):
         )
 
     if tipo == "IntervencionCorrectiva":
-        from .intervencion_correctiva import IntervencionCorrectiva
         return IntervencionCorrectiva(
             fecha=data.get("fecha"),
             kilometraje=data.get("kilometraje"),
