@@ -1,6 +1,5 @@
 from dominio.enums import EstadoEntregaParcial
 
-
 class EntregaParcial:
     def __init__(self, punto_entrega, fecha_entrega, detalle_carga):
         self._punto_entrega = punto_entrega

@@ -1,7 +1,6 @@
 from datetime import datetime
 from dominio.enums import EstadoEnvio
 
-
 class EventoHistorial:
     def __init__(self, descripcion, estado_anterior=None, estado_nuevo=None, fecha_hora=None):
         if estado_anterior is not None and not isinstance(estado_anterior, EstadoEnvio):

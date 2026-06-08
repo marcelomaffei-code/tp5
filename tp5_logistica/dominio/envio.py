@@ -1,7 +1,6 @@
 from dominio.enums import EstadoEnvio, EstadoVehiculo
 from dominio.evento_historial import EventoHistorial
 
-
 class Envio:
     def __init__(
         self,

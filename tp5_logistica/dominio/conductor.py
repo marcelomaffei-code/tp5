@@ -1,6 +1,5 @@
 from dominio.enums import CategoriaConductor, TipoCarga
 
-
 class Conductor:
     def __init__(self, licencia, nombre, antiguedad, categoria):
         if not isinstance(categoria, CategoriaConductor):
