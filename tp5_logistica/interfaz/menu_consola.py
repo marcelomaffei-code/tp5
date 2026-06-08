@@ -19,7 +19,12 @@ class MenuConsola:
 
         while self._ejecutando:
             self._mostrar_menu()
-            opcion = input("Seleccione una opción: ")
+            try:
+                opcion = input("Seleccione una opción: ").strip()
+            except EOFError:
+                print("Entrada finalizada. Saliendo del sistema...")
+                break
+
             self._procesar_opcion(opcion)
 
     def _mostrar_menu(self):

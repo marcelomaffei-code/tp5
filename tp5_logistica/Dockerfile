@@ -8,8 +8,11 @@ COPY . /app
 # instalar dependencias si existe requirements.txt
 RUN if [ -f /app/requirements.txt ]; then pip install --no-cache-dir -r /app/requirements.txt; fi
 
-# crear usuario no-root (opcional)
+# crear usuario no-root y carpeta de datos persistente
 RUN groupadd --system appgroup && useradd --system --gid appgroup appuser || true
+RUN mkdir -p /app/datos && chown -R appuser:appgroup /app/datos
 USER appuser
+
+VOLUME ["/app/datos"]
 
 CMD ["python", "main.py"]
