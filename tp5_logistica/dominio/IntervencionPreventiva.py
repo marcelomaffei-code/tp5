@@ -4,7 +4,7 @@ class IntervencionPreventiva(IntervencionMantenimiento):
     def __init__(self, fecha, kilometraje, descripcion, costo_base, revision_programada):
         super().__init__(fecha, kilometraje, descripcion, costo_base)
         self._revision_programada = revision_programada
-
+        
     @property
     def revision_programada(self):
         return self._revision_programada

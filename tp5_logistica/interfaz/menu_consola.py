@@ -3,8 +3,9 @@ from dominio.camion_convencional import CamionConvencional
 from dominio.vehiculo_refrigerado import VehiculoRefrigerado
 from dominio.vehiculo_carga_peligrosa import VehiculoCargaPeligrosa
 from dominio.centro_distribucion import CentroDistribucion
+from dominio.IntervencionPreventiva import IntervencionPreventiva
+from dominio.IntervencionCorrectiva import IntervencionCorrectiva
 from dominio.entrega_parcial import EntregaParcial
-from dominio.mantenimiento import IntervencionPreventiva, IntervencionCorrectiva
 from dominio.enums import CategoriaConductor
 from dominio.conductor import Conductor
 
