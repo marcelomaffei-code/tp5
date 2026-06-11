@@ -9,8 +9,18 @@ Este proyecto es una aplicacion de consola interactiva. La forma mas simple de s
 3. Conectarse por SSH:
 
 ```bash
-ssh -i "C:\Users\Administrador\Downloads\tp_logistica_key.pem" ubuntu@3.21.167.26
+ssh -i "C:\Users\Administrador\Downloads\tp_logistica_key.pem" ubuntu@18.190.159.185
 ```
+
+Si Windows rechaza la clave con `UNPROTECTED PRIVATE KEY FILE`, ajustar permisos:
+
+```powershell
+icacls "C:\Users\Administrador\Downloads\tp_logistica_key.pem" /inheritance:r
+icacls "C:\Users\Administrador\Downloads\tp_logistica_key.pem" /remove "MININT-TSBENE\CodexSandboxUsers"
+icacls "C:\Users\Administrador\Downloads\tp_logistica_key.pem" /grant:r "${env:USERNAME}:R"
+```
+
+Luego volver a intentar el SSH.
 
 4. Instalar Docker:
 
@@ -24,14 +34,16 @@ sudo usermod -aG docker ubuntu
 6. Subir el proyecto a la instancia. Desde tu maquina local:
 
 ```bash
-scp -i "C:\Users\Administrador\Downloads\tp_logistica_key.pem" -r tp5_logistica ubuntu@3.21.167.26:/home/ubuntu/
+ssh -i "C:\Users\Administrador\Downloads\tp_logistica_key.pem" ubuntu@18.190.159.185 "sudo rm -rf /home/ubuntu/tp5_logistica && mkdir -p /home/ubuntu/tp5_logistica && sudo chown -R ubuntu:ubuntu /home/ubuntu/tp5_logistica"
+scp -i "C:\Users\Administrador\Downloads\tp_logistica_key.pem" -r . ubuntu@18.190.159.185:/home/ubuntu/tp5_logistica/
 ```
 
 7. Construir la imagen:
 
 ```bash
 cd /home/ubuntu/tp5_logistica
-docker build -t tp5-logistica .
+ls -l persistencia/repositorio_archivo.py
+docker build --no-cache -t tp5-logistica .
 ```
 
 8. Ejecutar la aplicacion con datos persistentes:
@@ -39,6 +51,17 @@ docker build -t tp5-logistica .
 ```bash
 docker run --rm -it -v tp5_logistica_datos:/app/datos tp5-logistica
 ```
+
+Si aparece `ModuleNotFoundError: No module named 'persistencia.repositorio_archivo'`, la instancia puede estar construyendo una copia vieja/incompleta del proyecto o la imagen puede tener permisos incorrectos en las carpetas copiadas. Verificar en EC2:
+
+```bash
+cd /home/ubuntu/tp5_logistica
+find . -maxdepth 2 -type f | sort
+ls -l persistencia/
+docker run --rm tp5-logistica python -c "import os; print(os.listdir('/app/persistencia'))"
+```
+
+La salida debe incluir `persistencia/repositorio_archivo.py`. Si aparece `Permission denied`, confirmar que el Dockerfile tenga `chmod -R a+rX /app` antes de `USER appuser`, volver a subir el proyecto y reconstruir con `docker build --no-cache -t tp5-logistica .`.
 
 ## Ejecutar sin Docker
 
