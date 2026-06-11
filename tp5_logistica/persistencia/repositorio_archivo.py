@@ -28,7 +28,19 @@ class RepositorioArchivo(RepositorioDatos):
         datos = {}
 
         if self.existe_archivo():
-            with open(self._ruta_archivo, "r", encoding="utf-8") as archivo:
-                datos = json.load(archivo)
+            try:
+                with open(self._ruta_archivo, "r", encoding="utf-8") as archivo:
+                    datos = json.load(archivo)
+            except json.JSONDecodeError as error:
+                raise ValueError(
+                    f"El archivo de datos no tiene un formato JSON valido: {error}"
+                ) from error
+            except OSError as error:
+                raise ValueError(
+                    f"No se pudo leer el archivo de datos: {error}"
+                ) from error
+
+        if not isinstance(datos, dict):
+            raise ValueError("El archivo de datos debe contener un objeto JSON principal.")
 
         return datos

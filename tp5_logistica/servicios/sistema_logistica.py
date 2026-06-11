@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from dominio.enums import EstadoVehiculo, EstadoEnvio, CategoriaConductor, TipoCarga
 from dominio.camion_convencional import CamionConvencional
 from dominio.vehiculo_refrigerado import VehiculoRefrigerado
@@ -86,6 +88,12 @@ class SistemaLogistica:
         fecha_llegada_estimada,
         tipo_carga,
     ):
+        self._validar_fecha(fecha_salida_programada, "fecha de salida programada")
+        self._validar_fecha(fecha_llegada_estimada, "fecha de llegada estimada")
+
+        if fecha_llegada_estimada < fecha_salida_programada:
+            raise ValueError("La fecha de llegada estimada no puede ser anterior a la salida.")
+
         if numero_seguimiento in self._envios:
             raise ValueError("Ya existe un envío con ese número de seguimiento.")
 
@@ -162,6 +170,12 @@ class SistemaLogistica:
         return envio.generar_reporte_historial()
 
     def obtener_mantenimientos_por_periodo(self, fecha_desde, fecha_hasta):
+        self._validar_fecha(fecha_desde, "fecha desde")
+        self._validar_fecha(fecha_hasta, "fecha hasta")
+
+        if fecha_hasta < fecha_desde:
+            raise ValueError("La fecha hasta no puede ser anterior a la fecha desde.")
+
         resultados = []
 
         for vehiculo in self._vehiculos.values():
@@ -179,15 +193,39 @@ class SistemaLogistica:
         datos = self._repositorio.cargar()
 
         if datos:
-            self._vehiculos = {}
-            self._conductores = {}
-            self._centros = {}
-            self._envios = {}
-            self._cargar_centros(datos.get("centros", []))
-            self._cargar_conductores(datos.get("conductores", []))
-            self._cargar_vehiculos(datos.get("vehiculos", []))
-            self._cargar_asignaciones_conductores(datos.get("conductores", []))
-            self._cargar_envios(datos.get("envios", []))
+            estado_anterior = (
+                self._vehiculos,
+                self._conductores,
+                self._centros,
+                self._envios,
+            )
+
+            try:
+                self._vehiculos = {}
+                self._conductores = {}
+                self._centros = {}
+                self._envios = {}
+
+                centros_data = self._obtener_lista_datos(datos, "centros")
+                conductores_data = self._obtener_lista_datos(datos, "conductores")
+                vehiculos_data = self._obtener_lista_datos(datos, "vehiculos")
+                envios_data = self._obtener_lista_datos(datos, "envios")
+
+                self._cargar_centros(centros_data)
+                self._cargar_conductores(conductores_data)
+                self._cargar_vehiculos(vehiculos_data)
+                self._cargar_asignaciones_conductores(conductores_data)
+                self._cargar_envios(envios_data)
+            except (KeyError, TypeError, ValueError) as error:
+                (
+                    self._vehiculos,
+                    self._conductores,
+                    self._centros,
+                    self._envios,
+                ) = estado_anterior
+                raise ValueError(
+                    f"No se pudieron cargar los datos guardados: {error}"
+                ) from error
 
     def cargar_datos_de_prueba(self):
         camion = CamionConvencional("AB123CD", "Mercedes-Benz", "Atego", 2020)
@@ -202,25 +240,27 @@ class SistemaLogistica:
         centro2 = CentroDistribucion("Centro Córdoba", "Córdoba", "Ruta Nacional 9 km 700", 8000, 18)
         centro3 = CentroDistribucion("Centro Rosario", "Rosario", "Av. Circunvalación 3200", 7000, 15)
 
-        self.registrar_vehiculo(camion)
-        self.registrar_vehiculo(refrigerado)
-        self.registrar_vehiculo(peligroso)
+        self._registrar_vehiculo_si_no_existe(camion)
+        self._registrar_vehiculo_si_no_existe(refrigerado)
+        self._registrar_vehiculo_si_no_existe(peligroso)
 
-        self.registrar_conductor(conductor1)
-        self.registrar_conductor(conductor2)
-        self.registrar_conductor(conductor3)
+        self._registrar_conductor_si_no_existe(conductor1)
+        self._registrar_conductor_si_no_existe(conductor2)
+        self._registrar_conductor_si_no_existe(conductor3)
 
-        self.registrar_centro(centro1)
-        self.registrar_centro(centro2)
-        self.registrar_centro(centro3)
+        self._registrar_centro_si_no_existe(centro1)
+        self._registrar_centro_si_no_existe(centro2)
+        self._registrar_centro_si_no_existe(centro3)
 
-        self.asignar_conductor_a_vehiculo("LIC001", "AB123CD")
-        self.asignar_conductor_a_vehiculo("LIC002", "AC456EF")
-        self.asignar_conductor_a_vehiculo("LIC003", "AD789GH")
+        self._asignar_si_corresponde("LIC001", "AB123CD")
+        self._asignar_si_corresponde("LIC002", "AC456EF")
+        self._asignar_si_corresponde("LIC003", "AD789GH")
 
     def simular_flujo_completo(self):
-        if not self._vehiculos:
-            self.cargar_datos_de_prueba()
+        self.cargar_datos_de_prueba()
+
+        if "ENV001" in self._envios:
+            return self._envios["ENV001"]
 
         envio = self.crear_envio(
             numero_seguimiento="ENV001",
@@ -269,6 +309,44 @@ class SistemaLogistica:
             raise ValueError("No existe un envío con ese número de seguimiento.")
 
         return self._envios[numero_seguimiento]
+
+    def _validar_fecha(self, fecha, nombre_campo):
+        try:
+            datetime.strptime(fecha, "%Y-%m-%d")
+        except (TypeError, ValueError) as error:
+            raise ValueError(
+                f"La {nombre_campo} debe tener formato YYYY-MM-DD."
+            ) from error
+
+    def _obtener_lista_datos(self, datos, clave):
+        valor = datos.get(clave, [])
+
+        if not isinstance(valor, list):
+            raise ValueError(f"El campo '{clave}' debe ser una lista.")
+
+        return valor
+
+    def _registrar_vehiculo_si_no_existe(self, vehiculo):
+        if vehiculo.patente not in self._vehiculos:
+            self.registrar_vehiculo(vehiculo)
+
+    def _registrar_conductor_si_no_existe(self, conductor):
+        if conductor.licencia not in self._conductores:
+            self.registrar_conductor(conductor)
+
+    def _registrar_centro_si_no_existe(self, centro):
+        if centro.nombre not in self._centros:
+            self.registrar_centro(centro)
+
+    def _asignar_si_corresponde(self, licencia, patente):
+        if licencia not in self._conductores or patente not in self._vehiculos:
+            return
+
+        conductor = self._conductores[licencia]
+        vehiculo = self._vehiculos[patente]
+
+        if conductor.vehiculo_asignado is None and vehiculo.conductor is None:
+            self.asignar_conductor_a_vehiculo(licencia, patente)
 
     def _crear_datos_para_guardar(self):
         return {

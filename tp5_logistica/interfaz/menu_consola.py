@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from dominio.enums import TipoCarga
 from dominio.camion_convencional import CamionConvencional
 from dominio.vehiculo_refrigerado import VehiculoRefrigerado
@@ -105,12 +107,12 @@ class MenuConsola:
         patente = input("Patente: ")
         marca = input("Marca: ")
         modelo = input("Modelo: ")
-        anio = int(input("Año: "))
+        anio = self._leer_entero("Año: ")
 
         if tipo == "1":
             vehiculo = CamionConvencional(patente, marca, modelo, anio)
         elif tipo == "2":
-            temperatura_minima = float(input("Temperatura mínima: "))
+            temperatura_minima = self._leer_decimal("Temperatura mínima: ")
             vehiculo = VehiculoRefrigerado(
                 patente,
                 marca,
@@ -136,7 +138,7 @@ class MenuConsola:
     def _registrar_conductor(self):
         licencia = input("Licencia: ")
         nombre = input("Nombre: ")
-        antiguedad = int(input("Antigüedad: "))
+        antiguedad = self._leer_entero("Antigüedad: ")
 
         print("\nCategoría:")
         print("1. Novato")
@@ -155,8 +157,8 @@ class MenuConsola:
         nombre = input("Nombre: ")
         ciudad = input("Ciudad: ")
         direccion = input("Dirección: ")
-        capacidad = int(input("Capacidad máxima: "))
-        personal = int(input("Personal asignado: "))
+        capacidad = self._leer_entero("Capacidad máxima: ")
+        personal = self._leer_entero("Personal asignado: ")
 
         centro = CentroDistribucion(nombre, ciudad, direccion, capacidad, personal)
         self._sistema.registrar_centro(centro)
@@ -168,8 +170,8 @@ class MenuConsola:
         origen = input("Centro de origen: ")
         destino = input("Centro de destino: ")
         patente = input("Patente del vehículo: ")
-        fecha_salida = input("Fecha salida programada: ")
-        fecha_llegada = input("Fecha llegada estimada: ")
+        fecha_salida = self._leer_fecha("Fecha salida programada YYYY-MM-DD: ")
+        fecha_llegada = self._leer_fecha("Fecha llegada estimada YYYY-MM-DD: ")
 
         print("\nTipo de carga:")
         print("1. General")
@@ -207,10 +209,10 @@ class MenuConsola:
         print("2. Correctivo")
 
         tipo = input("Seleccione tipo: ")
-        fecha = input("Fecha: ")
-        kilometraje = int(input("Kilometraje: "))
+        fecha = self._leer_fecha("Fecha YYYY-MM-DD: ")
+        kilometraje = self._leer_entero("Kilometraje: ")
         descripcion = input("Descripción: ")
-        costo_base = float(input("Costo base: "))
+        costo_base = self._leer_decimal("Costo base: ")
 
         if tipo == "1":
             revision = input("¿Es revisión programada? s/n: ")
@@ -243,7 +245,7 @@ class MenuConsola:
     def _registrar_entrega_parcial(self):
         numero = input("Número de seguimiento del envío: ")
         punto = input("Punto de entrega: ")
-        fecha = input("Fecha de entrega: ")
+        fecha = self._leer_fecha("Fecha de entrega YYYY-MM-DD: ")
         detalle = input("Detalle de carga: ")
 
         entrega = EntregaParcial(punto, fecha, detalle)
@@ -267,8 +269,8 @@ class MenuConsola:
         print(historial)
 
     def _consultar_mantenimientos(self):
-        desde = input("Fecha desde YYYY-MM-DD: ")
-        hasta = input("Fecha hasta YYYY-MM-DD: ")
+        desde = self._leer_fecha("Fecha desde YYYY-MM-DD: ")
+        hasta = self._leer_fecha("Fecha hasta YYYY-MM-DD: ")
 
         resultados = self._sistema.obtener_mantenimientos_por_periodo(desde, hasta)
 
@@ -278,6 +280,31 @@ class MenuConsola:
             for vehiculo, mantenimiento in resultados:
                 print(f"Vehículo: {vehiculo.patente}")
                 print(mantenimiento.generar_reporte())
+
+    def _leer_entero(self, mensaje):
+        while True:
+            valor = input(mensaje).strip()
+            try:
+                return int(valor)
+            except ValueError:
+                print("Ingrese un numero entero valido.")
+
+    def _leer_decimal(self, mensaje):
+        while True:
+            valor = input(mensaje).strip()
+            try:
+                return float(valor)
+            except ValueError:
+                print("Ingrese un numero valido.")
+
+    def _leer_fecha(self, mensaje):
+        while True:
+            valor = input(mensaje).strip()
+            try:
+                datetime.strptime(valor, "%Y-%m-%d")
+                return valor
+            except ValueError:
+                print("Ingrese una fecha valida con formato YYYY-MM-DD.")
 
     def _obtener_categoria(self, opcion):
         categoria = None
