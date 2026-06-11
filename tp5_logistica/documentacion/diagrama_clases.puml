@@ -1,0 +1,249 @@
+@startuml
+title Sistema de gestion logistica - Diagrama de clases
+
+skinparam classAttributeIconSize 0
+
+enum EstadoVehiculo {
+  disponible
+  en_mantenimiento
+  en_ruta
+}
+
+enum EstadoEnvio {
+  pendiente
+  en_transito
+  entregado
+  cancelado
+}
+
+enum CategoriaConductor {
+  novato
+  experimentado
+  senior
+}
+
+enum TipoCarga {
+  general
+  refrigerada
+  peligrosa
+}
+
+enum EstadoEntregaParcial {
+  pendiente
+  entregada
+}
+
+abstract class Vehiculo {
+  -patente
+  -marca
+  -modelo
+  -anio
+  -estado_operativo
+  -conductor
+  -mantenimientos
+  +asignar_conductor(conductor)
+  +cambiar_estado(nuevo_estado)
+  +agregar_mantenimiento(intervencion)
+  +esta_disponible()
+  +obtener_tipo_carga()
+  +validar_carga(tipo_carga)
+  +calcular_costo_envio(distancia_km)
+  +generar_reporte()
+  +to_dict()
+}
+
+class CamionConvencional {
+  +obtener_tipo_carga()
+  +validar_carga(tipo_carga)
+  +calcular_costo_envio(distancia_km)
+}
+
+class VehiculoRefrigerado {
+  -temperatura_minima
+  +obtener_tipo_carga()
+  +validar_carga(tipo_carga)
+  +verificar_temperatura(temperatura_requerida)
+  +calcular_costo_envio(distancia_km)
+  +generar_reporte()
+  +to_dict()
+}
+
+class VehiculoCargaPeligrosa {
+  -habilitacion_peligrosa
+  +obtener_tipo_carga()
+  +validar_carga(tipo_carga)
+  +verificar_habilitacion()
+  +calcular_costo_envio(distancia_km)
+  +generar_reporte()
+  +to_dict()
+}
+
+class Conductor {
+  -licencia
+  -nombre
+  -antiguedad
+  -categoria
+  -vehiculo_asignado
+  +puede_transportar(tipo_carga)
+  +asignar_vehiculo(vehiculo)
+  +liberar_vehiculo()
+  +esta_disponible()
+  +generar_reporte()
+}
+
+class CentroDistribucion {
+  -nombre
+  -ciudad
+  -direccion
+  -capacidad_maxima
+  -personal_asignado
+  -envios_recibidos
+  -envios_despachados
+  +recibir_envio(envio)
+  +despachar_envio(envio)
+  +generar_reporte()
+}
+
+class Envio {
+  -numero_seguimiento
+  -origen
+  -destino
+  -fecha_salida_programada
+  -fecha_llegada_estimada
+  -vehiculo
+  -tipo_carga
+  -estado
+  -entregas_parciales
+  -historial
+  +validar_transicion(nuevo_estado)
+  +iniciar_transito()
+  +registrar_entrega_parcial(entrega)
+  +marcar_entregado()
+  +cancelar()
+  +agregar_evento_historial(evento)
+  +obtener_historial()
+  +generar_reporte_historial()
+  +to_dict()
+}
+
+class EntregaParcial {
+  -punto_entrega
+  -fecha_entrega
+  -detalle_carga
+  -estado
+  +marcar_entregada()
+  +esta_entregada()
+  +generar_resumen()
+  +to_dict()
+  +from_dict(data)
+}
+
+class EventoHistorial {
+  -fecha_hora
+  -descripcion
+  -estado_anterior
+  -estado_nuevo
+  +generar_descripcion()
+  +obtener_resumen()
+  +to_dict()
+  +from_dict(data)
+}
+
+abstract class IntervencionMantenimiento {
+  -fecha
+  -kilometraje
+  -descripcion
+  -costo_base
+  +obtener_tipo()
+  +calcular_costo_estimado()
+  +generar_reporte()
+  +to_dict()
+}
+
+class IntervencionPreventiva {
+  -revision_programada
+  +obtener_tipo()
+  +calcular_costo_estimado()
+  +generar_reporte()
+  +to_dict()
+}
+
+class IntervencionCorrectiva {
+  -gravedad_falla
+  +obtener_tipo()
+  +calcular_costo_estimado()
+  +generar_reporte()
+  +to_dict()
+}
+
+class SistemaLogistica {
+  -vehiculos
+  -conductores
+  -centros
+  -envios
+  -repositorio
+  +registrar_vehiculo(vehiculo)
+  +registrar_conductor(conductor)
+  +registrar_centro(centro)
+  +asignar_conductor_a_vehiculo(licencia, patente)
+  +crear_envio(...)
+  +iniciar_envio(numero_seguimiento)
+  +finalizar_envio(numero_seguimiento)
+  +cancelar_envio(numero_seguimiento)
+  +registrar_entrega_parcial(numero_seguimiento, entrega)
+  +registrar_mantenimiento(patente, intervencion)
+  +obtener_historial_envio(numero_seguimiento)
+  +obtener_mantenimientos_por_periodo(fecha_desde, fecha_hasta)
+  +guardar_datos()
+  +cargar_datos()
+  +cargar_datos_de_prueba()
+  +simular_flujo_completo()
+  -obtener_envio(numero_seguimiento)
+  -crear_datos_para_guardar()
+  -cargar_centros(centros_data)
+  -cargar_conductores(conductores_data)
+  -cargar_vehiculos(vehiculos_data)
+  -cargar_asignaciones_conductores(conductores_data)
+  -cargar_envios(envios_data)
+}
+
+abstract class RepositorioDatos {
+  +guardar(datos)
+  +cargar()
+}
+
+class RepositorioArchivo {
+  -ruta_archivo
+  +existe_archivo()
+  +guardar(datos)
+  +cargar()
+}
+
+Vehiculo <|-- CamionConvencional
+Vehiculo <|-- VehiculoRefrigerado
+Vehiculo <|-- VehiculoCargaPeligrosa
+IntervencionMantenimiento <|-- IntervencionPreventiva
+IntervencionMantenimiento <|-- IntervencionCorrectiva
+RepositorioDatos <|-- RepositorioArchivo
+
+Vehiculo "0..1" -- "0..1" Conductor : asignacion actual
+Vehiculo "1" o-- "0..*" IntervencionMantenimiento
+Envio "1" --> "1" Vehiculo
+Envio "1" --> "1" CentroDistribucion : origen
+Envio "1" --> "1" CentroDistribucion : destino
+Envio "1" o-- "0..*" EntregaParcial
+Envio "1" o-- "1..*" EventoHistorial
+CentroDistribucion "1" -- "0..*" Envio : despacha/recibe
+SistemaLogistica "1" o-- "0..*" Vehiculo
+SistemaLogistica "1" o-- "0..*" Conductor
+SistemaLogistica "1" o-- "0..*" CentroDistribucion
+SistemaLogistica "1" o-- "0..*" Envio
+SistemaLogistica "1" --> "1" RepositorioDatos
+
+Vehiculo --> EstadoVehiculo
+Envio --> EstadoEnvio
+Conductor --> CategoriaConductor
+Envio --> TipoCarga
+EntregaParcial --> EstadoEntregaParcial
+
+@enduml

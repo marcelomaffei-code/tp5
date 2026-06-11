@@ -179,6 +179,10 @@ class SistemaLogistica:
         datos = self._repositorio.cargar()
 
         if datos:
+            self._vehiculos = {}
+            self._conductores = {}
+            self._centros = {}
+            self._envios = {}
             self._cargar_centros(datos.get("centros", []))
             self._cargar_conductores(datos.get("conductores", []))
             self._cargar_vehiculos(datos.get("vehiculos", []))
@@ -235,8 +239,16 @@ class SistemaLogistica:
             costo_base=120000,
             revision_programada=True,
         )
+        mantenimiento_correctivo = IntervencionCorrectiva(
+            fecha="2026-06-07",
+            kilometraje=64000,
+            descripcion="Reparacion del sistema de refrigeracion.",
+            costo_base=250000,
+            gravedad_falla="alta",
+        )
 
         self.registrar_mantenimiento("AB123CD", mantenimiento)
+        self.registrar_mantenimiento("AC456EF", mantenimiento_correctivo)
 
         self.iniciar_envio("ENV001")
 
@@ -371,3 +383,8 @@ class SistemaLogistica:
             ]
 
             self._envios[envio.numero_seguimiento] = envio
+
+            origen.despachar_envio(envio)
+
+            if envio.estado == EstadoEnvio.ENTREGADO:
+                destino.recibir_envio(envio)

@@ -1,0 +1,46 @@
+@startuml
+title Flujo de envio desde creacion hasta entrega
+
+actor Usuario
+participant MenuConsola
+participant SistemaLogistica
+participant Envio
+participant CentroDistribucion as Origen
+participant CentroDistribucion as Destino
+participant Vehiculo
+participant EntregaParcial
+participant RepositorioArchivo
+
+Usuario -> MenuConsola: Crear envio
+MenuConsola -> SistemaLogistica: crear_envio(datos)
+SistemaLogistica -> Vehiculo: esta_disponible()
+SistemaLogistica -> Vehiculo: validar_carga(tipo_carga)
+SistemaLogistica -> Envio: new(...)
+Envio -> Envio: agregar_evento_historial("Envio creado")
+SistemaLogistica -> Origen: despachar_envio(envio)
+SistemaLogistica --> MenuConsola: envio creado
+
+Usuario -> MenuConsola: Iniciar envio
+MenuConsola -> SistemaLogistica: iniciar_envio(numero)
+SistemaLogistica -> Envio: iniciar_transito()
+Envio -> Vehiculo: cambiar_estado(en_ruta)
+Envio -> Envio: agregar_evento_historial("Envio iniciado")
+
+Usuario -> MenuConsola: Registrar entrega parcial
+MenuConsola -> SistemaLogistica: registrar_entrega_parcial(numero, entrega)
+SistemaLogistica -> Envio: registrar_entrega_parcial(entrega)
+Envio -> EntregaParcial: marcar_entregada()
+Envio -> Envio: agregar_evento_historial("Entrega parcial registrada")
+
+Usuario -> MenuConsola: Finalizar envio
+MenuConsola -> SistemaLogistica: finalizar_envio(numero)
+SistemaLogistica -> Envio: marcar_entregado()
+Envio -> Vehiculo: cambiar_estado(disponible)
+Envio -> Envio: agregar_evento_historial("Envio entregado")
+SistemaLogistica -> Destino: recibir_envio(envio)
+
+Usuario -> MenuConsola: Guardar datos
+MenuConsola -> SistemaLogistica: guardar_datos()
+SistemaLogistica -> RepositorioArchivo: guardar(datos)
+
+@enduml

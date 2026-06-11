@@ -1,0 +1,156 @@
+{
+    "vehiculos": [
+        {
+            "tipo_clase": "CamionConvencional",
+            "patente": "AB123CD",
+            "marca": "Mercedes-Benz",
+            "modelo": "Atego",
+            "anio": 2020,
+            "estado_operativo": "disponible",
+            "conductor_licencia": "LIC001",
+            "mantenimientos": [
+                {
+                    "tipo_clase": "IntervencionPreventiva",
+                    "fecha": "2026-06-05",
+                    "kilometraje": 85000,
+                    "descripcion": "Revisión general, cambio de aceite y control de frenos.",
+                    "costo_base": 120000,
+                    "revision_programada": true
+                }
+            ]
+        },
+        {
+            "tipo_clase": "VehiculoRefrigerado",
+            "patente": "AC456EF",
+            "marca": "Iveco",
+            "modelo": "Daily Refrigerado",
+            "anio": 2021,
+            "estado_operativo": "disponible",
+            "conductor_licencia": "LIC002",
+            "mantenimientos": [
+                {
+                    "tipo_clase": "IntervencionCorrectiva",
+                    "fecha": "2026-06-07",
+                    "kilometraje": 64000,
+                    "descripcion": "Reparacion del sistema de refrigeracion.",
+                    "costo_base": 250000,
+                    "gravedad_falla": "alta"
+                }
+            ],
+            "temperatura_minima": -5
+        },
+        {
+            "tipo_clase": "VehiculoCargaPeligrosa",
+            "patente": "AD789GH",
+            "marca": "Volvo",
+            "modelo": "FH",
+            "anio": 2019,
+            "estado_operativo": "disponible",
+            "conductor_licencia": "LIC003",
+            "mantenimientos": [],
+            "habilitacion_peligrosa": "HAZMAT-2026"
+        }
+    ],
+    "conductores": [
+        {
+            "licencia": "LIC001",
+            "nombre": "Juan Pérez",
+            "antiguedad": 1,
+            "categoria": "novato",
+            "vehiculo_patente": "AB123CD"
+        },
+        {
+            "licencia": "LIC002",
+            "nombre": "Laura Gómez",
+            "antiguedad": 5,
+            "categoria": "experimentado",
+            "vehiculo_patente": "AC456EF"
+        },
+        {
+            "licencia": "LIC003",
+            "nombre": "Carlos Fernández",
+            "antiguedad": 12,
+            "categoria": "senior",
+            "vehiculo_patente": "AD789GH"
+        }
+    ],
+    "centros": [
+        {
+            "nombre": "Centro Buenos Aires",
+            "ciudad": "Buenos Aires",
+            "direccion": "Av. Logística 1500",
+            "capacidad_maxima": 10000,
+            "personal_asignado": 25,
+            "envios_recibidos": [],
+            "envios_despachados": [
+                "ENV001"
+            ]
+        },
+        {
+            "nombre": "Centro Córdoba",
+            "ciudad": "Córdoba",
+            "direccion": "Ruta Nacional 9 km 700",
+            "capacidad_maxima": 8000,
+            "personal_asignado": 18,
+            "envios_recibidos": [
+                "ENV001"
+            ],
+            "envios_despachados": []
+        },
+        {
+            "nombre": "Centro Rosario",
+            "ciudad": "Rosario",
+            "direccion": "Av. Circunvalación 3200",
+            "capacidad_maxima": 7000,
+            "personal_asignado": 15,
+            "envios_recibidos": [],
+            "envios_despachados": []
+        }
+    ],
+    "envios": [
+        {
+            "numero_seguimiento": "ENV001",
+            "origen": "Centro Buenos Aires",
+            "destino": "Centro Córdoba",
+            "fecha_salida_programada": "2026-06-10",
+            "fecha_llegada_estimada": "2026-06-12",
+            "vehiculo": "AB123CD",
+            "tipo_carga": "general",
+            "estado": "entregado",
+            "entregas_parciales": [
+                {
+                    "punto_entrega": "Villa María",
+                    "fecha_entrega": "2026-06-11",
+                    "estado": "entregada",
+                    "detalle_carga": "Entrega parcial de carga general."
+                }
+            ],
+            "historial": [
+                {
+                    "fecha_hora": "2026-06-10 23:49:04",
+                    "descripcion": "Envío creado",
+                    "estado_anterior": null,
+                    "estado_nuevo": "pendiente"
+                },
+                {
+                    "fecha_hora": "2026-06-10 23:49:04",
+                    "descripcion": "Envío iniciado",
+                    "estado_anterior": "pendiente",
+                    "estado_nuevo": "en_transito"
+                },
+                {
+                    "fecha_hora": "2026-06-10 23:49:04",
+                    "descripcion": "Entrega parcial registrada: Villa María",
+                    "estado_anterior": "en_transito",
+                    "estado_nuevo": "en_transito"
+                },
+                {
+                    "fecha_hora": "2026-06-10 23:49:04",
+                    "descripcion": "Envío entregado",
+                    "estado_anterior": "en_transito",
+                    "estado_nuevo": "entregado"
+                }
+            ]
+        }
+    ]
+}

@@ -23,9 +23,11 @@ class MenuConsola:
                 opcion = input("Seleccione una opción: ").strip()
             except EOFError:
                 print("Entrada finalizada. Saliendo del sistema...")
-                break
+                self._ejecutando = False
+                opcion = None
 
-            self._procesar_opcion(opcion)
+            if opcion is not None:
+                self._procesar_opcion(opcion)
 
     def _mostrar_menu(self):
         print("\n--- MENÚ PRINCIPAL ---")
