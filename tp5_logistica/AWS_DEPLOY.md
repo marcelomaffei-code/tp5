@@ -1,12 +1,4 @@
-# Despliegue en AWS
 
-Este proyecto es una aplicacion de consola interactiva. La forma mas simple de subirlo a AWS es ejecutarlo en una instancia EC2 y entrar por SSH para usar el menu.
-
-## Opcion recomendada: EC2 con Docker
-
-1. Crear una instancia EC2 con Ubuntu.
-2. Abrir el puerto 22 solo para tu IP.
-3. Conectarse por SSH:
 
 ```bash
 ssh -i "C:\Users\Administrador\Downloads\tp_logistica_key.pem" ubuntu@18.190.159.185
@@ -74,6 +66,3 @@ cd /home/ubuntu/tp5_logistica
 python3 main.py
 ```
 
-## Nota importante
-
-Servicios como AWS App Runner, ECS o Elastic Beanstalk estan pensados para aplicaciones web o APIs que escuchan por HTTP. Como este proyecto usa `input()` y menu por consola, no es ideal para esos servicios sin antes convertir la interfaz en una web/API.
